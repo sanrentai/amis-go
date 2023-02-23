@@ -32,3 +32,9 @@ func Flex_style(p interface{}) opt {
 		o["style"] = p
 	}
 }
+
+func Flex_items(p ...interface{}) opt {
+	return func(o map[string]interface{}) {
+		o["items"] = p
+	}
+}

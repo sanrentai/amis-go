@@ -69,7 +69,7 @@ func Page_toolbar(p interface{}) opt {
 }
 
 // 往页面的内容区域加内容
-func Page_body(p interface{}) opt {
+func Page_body(p ...interface{}) opt {
 	return func(o map[string]interface{}) {
 		o["body"] = p
 	}
