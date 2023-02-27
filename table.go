@@ -76,7 +76,7 @@ func Table_toolbarClassName(p string) opt {
 }
 
 // 用来设置列信息
-func Table_columns(p interface{}) opt {
+func Table_columns(p ...interface{}) opt {
 	return func(o map[string]interface{}) {
 		o["columns"] = p
 	}
@@ -180,43 +180,58 @@ func Table_multiple(p bool) opt {
 	}
 }
 
-// 说明
-func Table_属性名(p interface{}) opt {
-	return func(o map[string]interface{}) {
-		o["属性名"] = p
+func TableColumn(opts ...opt) map[string]interface{} {
+	var o = map[string]interface{}{}
+	for _, op := range opts {
+		op(o)
 	}
+	return o
 }
 
 // 表头文本内容
-func Table_label(p interface{}) opt {
+func TableColumn_label(p interface{}) opt {
 	return func(o map[string]interface{}) {
 		o["label"] = p
 	}
 }
 
 // 通过名称关联数据
-func Table_name(p string) opt {
+func TableColumn_name(p string) opt {
 	return func(o map[string]interface{}) {
 		o["name"] = p
 	}
 }
 
+// 列宽
+func TableColumn_width(p interface{}) opt {
+	return func(o map[string]interface{}) {
+		o["width"] = p
+	}
+}
+
 // 提示信息
-func Table_remark(p interface{}) opt {
+func TableColumn_remark(p interface{}) opt {
 	return func(o map[string]interface{}) {
 		o["remark"] = p
 	}
 }
 
+// 	是否固定当前列 left | right | none
+func TableColumn_fixed(p interface{}) opt {
+	return func(o map[string]interface{}) {
+		o["fixe"] = p
+	}
+}
+
 // 弹出框
-func Table_popOver(p interface{}) opt {
+func TableColumn_popOver(p interface{}) opt {
 	return func(o map[string]interface{}) {
 		o["popOver"] = p
 	}
 }
 
 // 是否可复制
-func Table_copyable(p interface{}) opt {
+func TableColumn_copyable(p interface{}) opt {
 	return func(o map[string]interface{}) {
 		o["copyable"] = p
 	}

@@ -10,7 +10,7 @@ func newCompent(t string, opts ...opt) map[string]interface{} {
 	return o
 }
 
-type opt func(map[string]interface{})
+type opt = func(map[string]interface{})
 
 func JSON(o map[string]interface{}, pretty ...bool) string {
 	if len(pretty) == 1 && pretty[0] {

@@ -127,7 +127,7 @@ func Action_tooltipPlacement(p string) opt {
 // 当`action`配置在`dialog`或`drawer`的`actions`中时，配置为`true`指定此次操作完后关闭当前`dialog`或`drawer`。当值为字符串，并且是祖先层弹框的名字的时候，会把祖先弹框关闭掉。 |
 func Action_close(p interface{}) opt {
 	return func(o map[string]interface{}) {
-		o[""] = p
+		o["close"] = p
 	}
 }
 
@@ -135,5 +135,12 @@ func Action_close(p interface{}) opt {
 func Action_required(p ...string) opt {
 	return func(o map[string]interface{}) {
 		o["required"] = p
+	}
+}
+
+// 指定弹框内容，格式可参考Dialog
+func Action_dialog(p interface{}) opt {
+	return func(o map[string]interface{}) {
+		o["dialog"] = p
 	}
 }

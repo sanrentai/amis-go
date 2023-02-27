@@ -19,6 +19,12 @@ func App_brandName(p string) opt {
 	}
 }
 
+func App_showBreadcrumb(p bool) opt {
+	return func(o map[string]interface{}) {
+		o["showBreadcrumb"] = p
+	}
+}
+
 // 支持图片地址，或者 svg。
 func App_logo(p string) opt {
 	return func(o map[string]interface{}) {
@@ -34,28 +40,28 @@ func App_className(p string) opt {
 }
 
 // 顶部区域。
-func App_header(p string) opt {
+func App_header(p interface{}) opt {
 	return func(o map[string]interface{}) {
 		o["header"] = p
 	}
 }
 
 // 页面菜单上前面区域。
-func App_asideBefore(p string) opt {
+func App_asideBefore(p interface{}) opt {
 	return func(o map[string]interface{}) {
 		o["asideBefore"] = p
 	}
 }
 
 // 页面菜单下前面区域。
-func App_asideAfter(p string) opt {
+func App_asideAfter(p interface{}) opt {
 	return func(o map[string]interface{}) {
 		o["asideAfter"] = p
 	}
 }
 
 // 页面。
-func App_footer(p string) opt {
+func App_footer(p interface{}) opt {
 	return func(o map[string]interface{}) {
 		o["footer"] = p
 	}

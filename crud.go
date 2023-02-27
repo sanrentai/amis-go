@@ -445,3 +445,9 @@ func CRUD_btnClassName(p string) opt {
 		o["btnClassName"] = p
 	}
 }
+
+func CRUD_quickSaveItemApi(p interface{}) opt {
+	return func(o map[string]interface{}) {
+		o["quickSaveItemApi"] = p
+	}
+}

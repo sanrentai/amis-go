@@ -25,3 +25,9 @@ func Tpl_showNativeTitle(p bool) opt {
 		o["showNativeTitle"] = p
 	}
 }
+
+func Tpl_inline(p bool) opt {
+	return func(o map[string]interface{}) {
+		o["inline"] = p
+	}
+}
